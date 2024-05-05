@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    'bwish_api'
+    'bwish_api',
+    'send_email',
 ]
 
 MIDDLEWARE = [
