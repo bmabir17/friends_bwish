@@ -16,7 +16,7 @@ class Command(BaseCommand):
         send_email=SendMessage(logger=send_email_logger)
         # print(f"send_sms Val:{settings.send_sms} type: {type(settings.send_sms)}")
         while True:
-            if settings.send_sms:
+            if settings.send_email:
                 today = date.today()
                 current_year = today.year
                 print(current_year)

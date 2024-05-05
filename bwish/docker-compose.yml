@@ -1,0 +1,45 @@
+version: '3'
+services:
+  bwish_server:
+    image: bwish_server:v1.0
+    build:
+      context: .
+      dockerfile: Dockerfile
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+    restart: unless-stopped
+    environment:
+      - dev_environment=True
+      - uat_environment=False
+      - live_environment=False
+      - send_email=True
+    networks:
+      - bwish_network
+    ports:
+      - 5005:5005
+    expose:
+      - 5005
+    volumes:
+      - static_volume:/app/static
+
+  bwish_nginx:
+   image: nginx:latest
+#   build: ./services/nginx
+   ports:
+     - 6003:80
+   expose:
+     - 6003
+   networks:
+     - bwish_network
+   volumes:
+     - static_volume:/app/static
+   depends_on:
+     - bwish_server
+networks:
+  bwish_network:
+    name: bwish_network
+    # external: true
+    driver: bridge
+
+volumes:
+  static_volume:
