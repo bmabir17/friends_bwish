@@ -30,7 +30,7 @@ class Command(BaseCommand):
                         send_email.send_birthday_email(customer.email, customer.name)
                         customer.birthday_email_sent_year = current_year
                         customer.save()
-                print("Sleeping Untill Next Day")
+                print("Sleeping Untill Next Day. Unless New Customer is registered")
                 time.sleep((60))
                 # time.sleep((12*60*60))
 
