@@ -29,10 +29,13 @@ bwish
     ├── settings.py
     └── urls.py
 └── send_email/
+    └── management/
+        └── commmands/
+            └── run_send_email.py # Custom management command
     ├── __init__.py
     ├── admin.py
     ├── apps.py 
-    ├── send_message.py  # Custom management command
+    └── send_message.py  
 ```
 
 ### Setting Up
