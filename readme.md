@@ -72,3 +72,4 @@ bwish
         ```
     - The API will return a success Message when the registration is success. If a duplicate email exists it will return a error.
     - After success Message is seen wait for atleast 60 seconds and a email sent message will be printed on the console where docker-compose is running
+    - Email Will not be sent if today is not birthday. Only those who have birthday today will receive Email
